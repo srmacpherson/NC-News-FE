@@ -4,15 +4,15 @@ function Article( {article} ) {
   const date = new Date(isoString)
 
     return (
-        <>
-          <h2>{article.title}</h2>
-          <p>Topic: {article.topic}</p>
-          <p>{date.toLocaleString().slice(0, -3)}</p>
-          <p>Author: {article.author}</p>
-          <img src={article.article_img_url}/>
-          <p>Votes: {article.votes}</p>
-          <p>Comments: {article.comment_count}</p>
-        </>
+        <article className="article-card">
+          <img className="article-card-img" src={article.article_img_url} alt={article.topic}/>
+          <h2 className="article-card-title"><span id="article-card-title-id">{article.title}</span></h2>
+          <p className="article-card-votes">Votes: {article.votes}</p>
+          <p className="article-card-comments">Comments: {article.comment_count}</p>
+          <p className="article-card-author">Author: {article.author}</p>
+          <p className="article-card-topic"><span id="article-card-topic-id">{article.topic.toUpperCase()}</span></p>
+          <p className="article-card-date">{date.toLocaleString().slice(0, -3)}</p>
+        </article>
     )
 }
 

@@ -8,7 +8,7 @@ function Content({ articles }) {
       <ul>
         {articles.map((article) => {
           return (
-            <li key={article.article_id}>
+            <li className="article-li" key={article.article_id}>
               <Article article={article} />
             </li>
           );
