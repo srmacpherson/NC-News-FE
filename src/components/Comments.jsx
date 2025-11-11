@@ -25,7 +25,7 @@ function Comments({ spotlight }) {
             const isoString = comment.created_at;
             const date = new Date(isoString);
           return (
-          <li key={comment.comment_id}>
+          <li key={comment.comment_id} className="spotlight-comment-card">
             <p><strong>{comment.author}</strong> - <em>{date.toLocaleString().slice(0, -3)}</em></p>
             <p>{comment.body}</p>
             <p>{comment.votes}</p>
