@@ -33,9 +33,7 @@ function Spotlight() {
         </em>
       </p>
       <img src={spotlight.article_img_url} />
-      <p>
-        <em>votes: {spotlight.votes}</em>
-      </p>
+      <p>votes: {spotlight.votes} || {spotlight.comment_count} comments</p>
       <p>{spotlight.body}</p>
       <Comments spotlight={spotlight}/>
     </article>
