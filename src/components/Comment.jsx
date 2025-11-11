@@ -42,6 +42,8 @@ function Comment({ setComments, spotlight, comment, date, voteStyle }) {
       }   
     }
 
+    setIsDisabledDown(false);
+    setIsDisabledUp(false);
         // axios.put(`https://nc-news-be-vwd3.onrender.com/api/articles/${comment.comment_id}`, {votes: votesCount}).then((res) => {
         //     console.log(res)
         // }).catch((err) => {
