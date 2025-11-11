@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function Comment({ setComments, spotlight, comment, date, voteStyle }) {
+function Comment({ setComments, spotlight, comment, date, voteStyle, }) {
   const [votesCount, setVotesCount] = useState(comment.votes);
   const [thumbStyleUp, setThumbStyleUp] = useState("thumbs");
   const [thumbStyleDown, setThumbStyleDown] = useState("thumbs");
