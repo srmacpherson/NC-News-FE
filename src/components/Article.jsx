@@ -9,7 +9,7 @@ function Article( {article} ) {
           <h2 className="article-card-title"><span id="article-card-title-id">{article.title}</span></h2>
           <p className="article-card-votes">Votes: {article.votes}</p>
           <p className="article-card-comments">Comments: {article.comment_count}</p>
-          <p className="article-card-author">Author: {article.author}</p>
+          <p className="article-card-author"><em>Author: {article.author}</em></p>
           <p className="article-card-topic"><span id="article-card-topic-id">{article.topic.toUpperCase()}</span></p>
           <p className="article-card-date">{date.toLocaleString().slice(0, -3)}</p>
         </article>

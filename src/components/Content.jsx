@@ -3,8 +3,8 @@ import Pagination from "./Pagination";
 
 function Content({ articles }) {
   return (
-    <>
-      <h3>Content</h3>
+    <section className="content-section">
+      <h3>Articles</h3>
       <ul>
         {articles.map((article) => {
           return (
@@ -15,7 +15,7 @@ function Content({ articles }) {
         })}
       </ul>
       <Pagination />
-    </>
+    </section>
   );
 }
 

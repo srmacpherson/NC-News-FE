@@ -1,12 +1,36 @@
 * {
-    font-family: monospace;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 body {
-    border: red 1px solid;
+    background-color: rgb(48, 68, 74);
     padding: 0 20px;
     max-width: 1250px;
     margin: 0 auto;
+}
+
+h1 {
+    background-color: aqua;
+    border-radius: 5px;
+    max-width: fit-content;
+    padding: 10px;
+    border: slategray 3px solid;
+}
+
+.content-section {
+    max-width: 800px; 
+    background-color: rgb(180, 184, 189);
+    display: flex;
+    flex-direction: column;  
+    align-items: center;  
+}
+
+h3 {
+    background-color: aqua;
+    border-radius: 5px;
+    max-width: fit-content;
+    padding: 10px;
+    border: slategray 3px solid;
 }
 
 ul {
@@ -15,8 +39,7 @@ ul {
   align-items: center;  
   list-style: none;    
   padding: 0;
-  margin: 0 auto;  
-  width: 100%;  
+  margin: 0 auto; 
 }
 
 .article-li {
@@ -42,30 +65,39 @@ ul {
   text-align: center;
   width: 100%;
   margin: 0;
-  background-image: linear-gradient( rgba(255,0,0,0), rgb(70, 211, 247));
-  border-radius: 5px;
+  background-image: linear-gradient( rgba(255,0,0,0), rgb(255, 255, 255));
 }
 
 .article-card-comments {
     grid-area: comments;
     justify-self: left;
-    margin-left: 8rem;
+    margin: 0;
+    border: 2px outset rgb(48, 68, 74);
+    border-radius: 0 0 5px 0;
+    padding: 10px 0;
+    width: 98.8%;
 }
 
 .article-card-comments:hover {
-    background-color: antiquewhite;
+    background-color: white;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .article-card-votes {
     grid-area: votes;
     justify-self: right;
-    margin-right: 8rem;
+    margin: 0;
+    border: 2px outset rgb(48, 68, 74);
+    border-radius: 0 0 0 5px;
+    padding: 10px 0;
+    width: 98.8%;
 }
 
 .article-card-votes:hover {
-    background-color: antiquewhite;
+    background-color: white;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .article-card-topic {
@@ -78,27 +110,31 @@ ul {
 #article-card-topic-id {
     padding: 10px;
     border-radius: 5px;
-    background-color: rgb(70, 211, 247, 1);
+    background-color: aqua;
 }
 
 #article-card-topic-id:hover {
     padding: 10px;
     border-radius: 5px;
-    background-color: whitesmoke;
+    background-color: white;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .article-card-author {
     grid-area: author;
+    margin-left: 10px;
 }
 
 .article-card-date {
     grid-area: date;
-    border: 1px solid black;
+    justify-self: right;
+    opacity: .5;
+    margin-right: 10px;
 }
 
 .article-card {
-    padding: 40px;
+    padding: 40px 40px 0 40px;
     max-width: 700px;;
     display: grid;
     grid-template-columns: 1fr 1fr;
