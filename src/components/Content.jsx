@@ -1,5 +1,6 @@
 import Article from "./Article";
 import Pagination from "./Pagination";
+import { Link } from "react-router";
 
 function Content({ articles }) {
   return (
@@ -8,9 +9,9 @@ function Content({ articles }) {
       <ul>
         {articles.map((article) => {
           return (
-            <li className="article-li" key={article.article_id}>
+            <Link to={`/articles/${article.article_id}`}><li className="article-li" key={article.article_id}>
               <Article article={article} />
-            </li>
+            </li></Link>
           );
         })}
       </ul>

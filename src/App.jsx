@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router';
 import axios from 'axios';
 import Header from './components/Header'
 import SideBar from './components/SideBar'
 import Content from './components/Content'
+import Spotlight from './components/Spotlight';
 import './App.css'
 
 function App() {
@@ -23,7 +25,11 @@ function App() {
     <>
       <Header />
       <SideBar />
-      <Content articles={articles} />
+      <Routes>
+        <Route path="/" element={<Content articles={articles} />} />
+        <Route path="/articles" element={<Content articles={articles} />} />
+        <Route path="/articles/:article_id" element={<Spotlight />} />
+      </Routes>
     </>
   )
 }

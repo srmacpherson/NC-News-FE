@@ -1,4 +1,7 @@
-function Comments() {
+function Comments( { spotlight } ) {
+
+    
+
     return <p>Comments</p>
 }
 
