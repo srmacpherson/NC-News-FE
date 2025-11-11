@@ -79,7 +79,7 @@ function Spotlight() {
         payload
       )
       .then((res) => {
-        console.log(res.data.article);
+        setVotesCount(res.data.article.votes);
       })
       .catch((err) => {
         console.error(err);
