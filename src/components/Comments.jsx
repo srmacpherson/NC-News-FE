@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Comment from "./Comment";
 
 function Comments({ spotlight }) {
   const [comments, setComments] = useState([]);
@@ -18,6 +19,7 @@ function Comments({ spotlight }) {
       });
   }, [spotlight]);
 
+
   return (
     <section className="spotlight-comments-card">
       <ul>
@@ -25,9 +27,8 @@ function Comments({ spotlight }) {
             <label> Leave a comment:
                 <textarea type="text" />
             </label>
-            
-
         </div>
+
         {comments.map((comment) => {
           const isoString = comment.created_at;
           const date = new Date(isoString);
@@ -44,22 +45,7 @@ function Comments({ spotlight }) {
           }
 
           return (
-            <li key={comment.comment_id} className="spotlight-comment-card">
-              <p>
-                <strong>{comment.author}</strong> -{" "}
-                <em>{date.toLocaleString().slice(0, -3)}</em>
-              </p>
-              <p>{comment.body}</p>
-              <div className="react-container">
-                <button className="thumbs">{"👍"}</button>
-                <button className="thumbs">{"👎"}</button>
-                <p className={voteStyle}>{comment.votes}</p>
-              </div>
-              <div className="reply-box">
-                <p className="reply-box-p-tag">reply:</p>
-                <input type="text" className="reply-box-input" />
-              </div>
-            </li>
+            <Comment setComments={setComments} spotlight={spotlight} key={comment.comment_id} comment={comment} date={date} voteStyle={voteStyle}></Comment>
           );
         })}
       </ul>

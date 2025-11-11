@@ -181,6 +181,16 @@ textarea {
     border-radius: 5px;
 }
 
+.thumbs:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+.thumbs-pressed {
+    background-color: grey;
+}
+
+
 .spotlight-vote-count-pos {
     background-color: rgb(0, 255, 0, 0.5);
     width: fit-content;

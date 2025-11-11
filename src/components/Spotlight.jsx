@@ -32,7 +32,7 @@ function Spotlight() {
           {spotlight.author} - {date.toLocaleString().slice(0, -3)}
         </em>
       </p>
-      <p className="article-card-topic"><span id="article-card-topic-id">{spotlight.topic.toUpperCase()}</span></p>
+      <p className="article-card-topic"><span id="article-card-topic-id">{spotlight.topic}</span></p>
       <img src={spotlight.article_img_url} />
       <p>votes: {spotlight.votes} || {spotlight.comment_count} comments</p>
       <p>{spotlight.body}</p>
