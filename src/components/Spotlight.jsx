@@ -14,7 +14,6 @@ function Spotlight() {
         `https://nc-news-be-vwd3.onrender.com/api/articles/${params.article_id}`
       )
       .then((res) => {
-        console.log(res.data.article);
         setSpotlight(res.data.article);
       })
       .catch((err) => {

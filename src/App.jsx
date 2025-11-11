@@ -14,7 +14,6 @@ function App() {
     axios.get('https://nc-news-be-vwd3.onrender.com/api/articles')
     .then((res) => {
       setArticles(res.data.articles)
-      console.log(res.data)
     })
     .catch((err) => {
       console.error(error);
