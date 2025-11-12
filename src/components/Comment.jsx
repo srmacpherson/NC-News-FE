@@ -82,8 +82,8 @@ function Comment({ comment, date, voteStyle }) {
     // })
   }
 
-  if (isDeleting) return <div class="fade-out-delete">Deleting comment...</div>;
-  if (isDeleted) return isVisible && <div class="fade-out-delete"><p>Comment deleted.</p></div>; 
+  if (isDeleting) return <div>Deleting comment...</div>;
+  if (isDeleted) return isVisible && <div className="fade-out-delete"><p>Comment deleted.</p></div>; 
 
   return (
     <li key={comment.comment_id} className="spotlight-comment-card">
