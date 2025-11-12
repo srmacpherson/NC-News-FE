@@ -6,6 +6,7 @@ import SideBar from './components/SideBar'
 import Content from './components/Content'
 import Spotlight from './components/Spotlight';
 import Topics from './components/Topics';
+import Topic from './components/Topic';
 import './App.css'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/articles" element={<Content articles={articles} />} />
         <Route path="/articles/:article_id" element={<Spotlight />} />
         <Route path="/topics" element={<Topics />}/>
+        <Route path="/topics/:topic" element={<Topic />}/>
       </Routes>
     </>
   )
