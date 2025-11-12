@@ -1,12 +1,12 @@
 import Navigation from "./Navigation";
 import Filters from "./Filters";
 
-function SideBar() {
+function SideBar({setSortByDate}) {
     return (
         <>
             <h2>SideBar</h2>
             <Navigation />
-            <Filters />
+            <Filters setSortByDate={setSortByDate}/>
         </>
     )
 }

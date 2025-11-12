@@ -7,17 +7,7 @@ function Topic({ articles }) {
   const params = useParams();
 
   return (
-    <>
-      <p>Topic</p>
-      <label htmlFor="sortBy">Sort By:</label>
-      <section>
-        <select name="sortBy" id="sortBy">
-          <option value="">--Sort by--</option>
-          <option value="Date: oldest-newest">Date: oldest-newest</option>
-          <option value="Date: newest-oldest">Date: newest-oldest</option>
-          <option value="article id">article id</option>
-        </select>
-      </section>
+    <>      
       <section className="content-section">
         <h3>Articles</h3>
         <ul>

@@ -13,10 +13,11 @@ function App() {
   const [ articles, setArticles ] = useState([]);
   const [ isLoading, setIsLoading ] = useState(true);
   const [ error, setError] = useState(null);
+  const [ sortByDate, setSortByDate ] = useState("desc")
   
 
   useEffect(() => {
-    axios.get('https://nc-news-be-vwd3.onrender.com/api/articles')
+    axios.get(`https://nc-news-be-vwd3.onrender.com/api/articles?order=${sortByDate}`)
     .then((res) => {
       setArticles(res.data.articles)
     })
@@ -26,14 +27,14 @@ function App() {
     }).finally(() => {
       setIsLoading(false)
     })
-  }, [])
+  }, [sortByDate])
 
   if (error) return <p>Something went wrong.</p>;
   if (isLoading) return <p>Loading...</p>;
   return (
     <>
       <Header />
-      <SideBar />
+      <SideBar setSortByDate={setSortByDate}/>
       <Routes>
         <Route path="/" element={<Content articles={articles} />} />
         <Route path="/articles" element={<Content articles={articles} />} />
