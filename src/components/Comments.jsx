@@ -4,7 +4,10 @@ import Comment from "./Comment";
 
 function Comments({ spotlight }) {
   const [comments, setComments] = useState([]);
-  const [ textVal, setTextVal ] = useState("");
+  const [textVal, setTextVal] = useState("");
+  const [isPosting, setIsPosting] = useState(false);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!spotlight?.article_id) return;
@@ -14,14 +17,19 @@ function Comments({ spotlight }) {
       )
       .then((res) => {
         setComments(res.data.comments);
+        setError(null);
       })
       .catch((err) => {
         console.error(err);
+        setError(err);
+      }).finally(() => {
+        setIsLoading(false);
       });
   }, [spotlight]);
 
   function onSubmitHandler(e) {
     e.preventDefault();
+    setIsPosting(true);
 
     const payload = {
       username: "tickle122",
@@ -37,11 +45,18 @@ function Comments({ spotlight }) {
         const newComment = res.data.comment;
         setTextVal("");
         setComments((prevComments) => [newComment, ...prevComments]);
+        setError(null);
       })
       .catch((err) => {
         console.error(err);
+        setError(err);
+      })
+      .finally(() => {
+        setIsPosting(false);
       });
   }
+
+  if (isLoading) return <p>Loading comments...</p>;
 
   return (
     <section className="spotlight-comments-card">
@@ -54,9 +69,19 @@ function Comments({ spotlight }) {
           <label>
             {" "}
             Leave a comment:
-            <textarea type="text" value={textVal} onChange={(e) => setTextVal(e.target.value)} name="comment" rows="4" required />
+            <textarea
+              type="text"
+              value={textVal}
+              onChange={(e) => setTextVal(e.target.value)}
+              name="comment"
+              rows="4"
+              required
+            />
           </label>
-          <button>Post</button>
+          <button disabled={!textVal.trim() || isPosting}>
+            {isPosting ? "Posting..." : "Post"}
+          </button>
+          <p>{error ? "Comment failed to post..." : ""}</p>
         </form>
 
         {comments.map((comment) => {
