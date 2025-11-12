@@ -4,6 +4,7 @@ import Comment from "./Comment";
 
 function Comments({ spotlight }) {
   const [comments, setComments] = useState([]);
+  const [ textVal, setTextVal ] = useState("");
 
   useEffect(() => {
     if (!spotlight?.article_id) return;
@@ -21,14 +22,11 @@ function Comments({ spotlight }) {
 
   function onSubmitHandler(e) {
     e.preventDefault();
-    console.log(e.target[0].value);
 
     const payload = {
       username: "tickle122",
       body: e.target[0].value,
     };
-
-    console.log("Payload:", payload);
 
     axios
       .post(
@@ -36,7 +34,9 @@ function Comments({ spotlight }) {
         payload
       )
       .then((res) => {
-        console.log(res.data);
+        const newComment = res.data.comment;
+        setTextVal("");
+        setComments((prevComments) => [newComment, ...prevComments]);
       })
       .catch((err) => {
         console.error(err);
@@ -54,7 +54,7 @@ function Comments({ spotlight }) {
           <label>
             {" "}
             Leave a comment:
-            <textarea type="text" name="comment" rows="4" required />
+            <textarea type="text" value={textVal} onChange={(e) => setTextVal(e.target.value)} name="comment" rows="4" required />
           </label>
           <button>Post</button>
         </form>
