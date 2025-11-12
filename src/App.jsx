@@ -31,7 +31,7 @@ function App() {
         <Route path="/articles" element={<Content articles={articles} />} />
         <Route path="/articles/:article_id" element={<Spotlight />} />
         <Route path="/topics" element={<Topics />}/>
-        <Route path="/topics/:topic" element={<Topic />}/>
+        <Route path="/topics/:topic" element={<Topic articles={articles} />}/>
       </Routes>
     </>
   )
