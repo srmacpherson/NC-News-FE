@@ -19,15 +19,45 @@ function Comments({ spotlight }) {
       });
   }, [spotlight]);
 
+  function onSubmitHandler(e) {
+    e.preventDefault();
+    console.log(e.target[0].value);
+
+    const payload = {
+      username: "tickle122",
+      body: e.target[0].value,
+    };
+
+    console.log("Payload:", payload);
+
+    axios
+      .post(
+        `https://nc-news-be-vwd3.onrender.com/api/articles/${spotlight.article_id}/comments`,
+        payload
+      )
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 
   return (
     <section className="spotlight-comments-card">
       <ul>
-        <div className="spotlight-post-comment-card">
-            <label> Leave a comment:
-                <textarea type="text" />
-            </label>
-        </div>
+        <form
+          onSubmit={onSubmitHandler}
+          action=""
+          className="spotlight-post-comment-card"
+        >
+          <label>
+            {" "}
+            Leave a comment:
+            <textarea type="text" name="comment" rows="4" required />
+          </label>
+          <button>Post</button>
+        </form>
 
         {comments.map((comment) => {
           const isoString = comment.created_at;
@@ -45,7 +75,14 @@ function Comments({ spotlight }) {
           }
 
           return (
-            <Comment setComments={setComments} spotlight={spotlight} key={comment.comment_id} comment={comment} date={date} voteStyle={voteStyle}></Comment>
+            <Comment
+              setComments={setComments}
+              spotlight={spotlight}
+              key={comment.comment_id}
+              comment={comment}
+              date={date}
+              voteStyle={voteStyle}
+            ></Comment>
           );
         })}
       </ul>
