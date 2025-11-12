@@ -10,7 +10,10 @@ import Topic from './components/Topic';
 import './App.css'
 
 function App() {
-  const [ articles, setArticles ] = useState([])
+  const [ articles, setArticles ] = useState([]);
+  const [ isLoading, setIsLoading ] = useState(true);
+  const [ error, setError] = useState(null);
+  
 
   useEffect(() => {
     axios.get('https://nc-news-be-vwd3.onrender.com/api/articles')
@@ -18,10 +21,15 @@ function App() {
       setArticles(res.data.articles)
     })
     .catch((err) => {
+      setError(err)
       console.error(error);
+    }).finally(() => {
+      setIsLoading(false)
     })
   }, [])
 
+  if (error) return <p>Something went wrong.</p>;
+  if (isLoading) return <p>Loading...</p>;
   return (
     <>
       <Header />

@@ -9,9 +9,11 @@ function Content({ articles }) {
       <ul>
         {articles.map((article) => {
           return (
-            <Link to={`/articles/${article.article_id}`}><li className="article-li" key={article.article_id}>
-              <Article article={article} />
-            </li></Link>
+            <li className="article-li" key={article.article_id}>
+              <Link to={`/articles/${article.article_id}`}>
+                <Article article={article} />
+              </Link>
+            </li>
           );
         })}
       </ul>

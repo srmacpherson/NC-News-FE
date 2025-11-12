@@ -5,7 +5,6 @@ import Pagination from "./Pagination";
 
 function Topic({ articles }) {
   const params = useParams();
-  console.log(params.topic);
 
   return (
     <>
@@ -25,11 +24,11 @@ function Topic({ articles }) {
           {articles.map((article) => {
             if (article.topic === params.topic) {
               return (
-                <Link to={`/articles/${article.article_id}`}>
-                  <li className="article-li" key={article.article_id}>
+                <li className="article-li" key={article.article_id}>
+                  <Link to={`/articles/${article.article_id}`}>
                     <Article article={article} />
-                  </li>
-                </Link>
+                  </Link>
+                </li>
               );
             }
           })}
