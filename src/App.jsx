@@ -5,6 +5,7 @@ import Header from './components/Header'
 import SideBar from './components/SideBar'
 import Content from './components/Content'
 import Spotlight from './components/Spotlight';
+import Topics from './components/Topics';
 import './App.css'
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Content articles={articles} />} />
         <Route path="/articles" element={<Content articles={articles} />} />
         <Route path="/articles/:article_id" element={<Spotlight />} />
+        <Route path="/topics" element={<Topics />}/>
       </Routes>
     </>
   )
