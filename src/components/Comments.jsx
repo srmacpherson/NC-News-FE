@@ -101,8 +101,6 @@ function Comments({ spotlight }) {
 
           return (
             <Comment
-              setComments={setComments}
-              spotlight={spotlight}
               key={comment.comment_id}
               comment={comment}
               date={date}
