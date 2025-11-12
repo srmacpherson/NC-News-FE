@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router';
+import { Routes, Route, useSearchParams } from 'react-router';
 import axios from 'axios';
 import Header from './components/Header'
 import SideBar from './components/SideBar'
@@ -15,6 +15,7 @@ function App() {
   const [ error, setError] = useState(null);
   const [ orderBy, setOrderBy ] = useState("desc");
   const [ sortBy, setSortBy ] = useState("");
+  const [ searchParams, setSearchParams ] = useSearchParams();
 
   
 
@@ -29,14 +30,14 @@ function App() {
     }).finally(() => {
       setIsLoading(false)
     })
-  }, [orderBy, sortBy])
+  }, [orderBy, sortBy, searchParams])
 
   if (error) return <p>Something went wrong.</p>;
   if (isLoading) return <p>Loading...</p>;
   return (
     <>
       <Header />
-      <SideBar setSortBy={setSortBy} setOrderBy={setOrderBy}/>
+      <SideBar setSortBy={setSortBy} setOrderBy={setOrderBy} setSearchParams={setSearchParams}/>
       <Routes>
         <Route path="/" element={<Content articles={articles} />} />
         <Route path="/articles" element={<Content articles={articles} />} />
