@@ -1,14 +1,30 @@
-function Filters({setSortByDate}) {
-
-    function handleChange(e) {
-        console.log(e.target.value)
-        if (e.target.value === "Date: oldest-newest") {
-            setSortByDate("asc");
-        }
-         if (e.target.value === "Date: newest-oldest") {
-            setSortByDate("desc");
-        }
+function Filters({ setOrderBy, setSortBy }) {
+  function handleChange(e) {
+    if (e.target.value === "Date (oldest-newest)") {
+      setSortBy("created_at");
+      setOrderBy("asc");
     }
+    if (e.target.value === "Date (newest-oldest)") {
+      setSortBy("created_at");
+      setOrderBy("desc");
+    }
+    if (e.target.value === "Most Comments") {
+      setSortBy("comment_count");
+      setOrderBy("desc");
+    }
+    if (e.target.value === "Least Votes") {
+      setSortBy("votes");
+      setOrderBy("asc");
+    }
+    if (e.target.value === "Most Votes") {
+      setSortBy("votes");
+      setOrderBy("desc");
+    }
+  }
+
+  function handleChangeOrder(e) {
+    setOrderBy(e.target.value)
+  }
 
   return (
     <>
@@ -16,11 +32,18 @@ function Filters({setSortByDate}) {
       <label htmlFor="sortBy">Sort By:</label>
       <section>
         <select name="sortBy" id="sortBy" onChange={handleChange}>
-          <option value="">--Sort by--</option>
-          <option value="Date: oldest-newest" >Date: oldest-newest</option>
-          <option value="Date: newest-oldest" >Date: newest-oldest</option>
-          <option value="article id" >article id</option>
+          <option value="">--Sort By--</option>
+          <option value="Date (oldest-newest)">Date (oldest-newest)</option>
+          <option value="Date (newest-oldest)">Date (newest-oldest)</option>
+          <option value="Most Votes">Most Votes</option>
+          <option value="Least Votes">Least Votes</option>
+          <option value="Most Comments">Most Comments</option>
         </select>
+        <p>Order By:</p>
+        <input type="radio" id="order1" name="order" value="desc" onChange={handleChangeOrder}/>
+        <label htmlFor="order1">descending</label>
+        <input type="radio" id="order2" name="order" value="asc" onChange={handleChangeOrder}/>
+        <label htmlFor="order2">ascending</label>
       </section>
     </>
   );

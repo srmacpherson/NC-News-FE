@@ -9,7 +9,6 @@ function Topics() {
     axios
       .get(`https://nc-news-be-vwd3.onrender.com/api/topics`)
       .then((res) => {
-        console.log(res.data.topics);
         setTopics(res.data.topics);
       })
       .catch((err) => {
