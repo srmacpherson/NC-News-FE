@@ -24,7 +24,6 @@ function Spotlight() {
       .then((res) => {
         setSpotlight(res.data.article);
         setVotesCount(res.data.article.votes);
-        console.log(res.data.article);
       })
       .catch((err) => {
         console.error(err);
