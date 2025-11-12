@@ -28,7 +28,7 @@ h1 {
 h3 {
     background-color: aqua;
     border-radius: 5px;
-    max-width: fit-content;
+    width: fit-content;
     padding: 10px;
     border: slategray 3px solid;
 }
