@@ -41,8 +41,8 @@ function Filters({ setOrderBy, setSortBy, setSearchParams }) {
       <section>
         <select name="sortBy" id="sortBy" onChange={handleChange}>
           <option value="">--Sort By--</option>
-          <option value="Date (oldest-newest)">Date (oldest-newest)</option>
           <option value="Date (newest-oldest)">Date (newest-oldest)</option>
+          <option value="Date (oldest-newest)">Date (oldest-newest)</option>
           <option value="Most Votes">Most Votes</option>
           <option value="Least Votes">Least Votes</option>
           <option value="Most Comments">Most Comments</option>

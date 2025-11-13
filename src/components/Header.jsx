@@ -1,10 +1,11 @@
 import User from "./User";
 import SearchBar from "./SearchBar";
+import { Link } from "react-router";
 
 function Header() {
     return (
         <>
-            <h1>NC-News</h1>
+            <Link to="/"><h1>NC-News</h1></Link>
             <User />
             <SearchBar />
         </>
