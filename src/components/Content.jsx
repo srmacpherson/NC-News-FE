@@ -4,8 +4,9 @@ import { Link } from "react-router";
 import { useArticles } from "../../ultils/useArticles";
 
 function Content({ searchParams }) {
-  const params = Object.fromEntries(searchParams.entries());
-  const { articles, isLoading, error } = useArticles(params);
+  const { articles, isLoading, error } = useArticles(
+    Object.fromEntries(searchParams.entries())
+  );
 
   if (error) return <p>Something went wrong.</p>;
   if (isLoading) return <p>Loading...</p>;

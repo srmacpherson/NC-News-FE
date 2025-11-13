@@ -1,17 +1,15 @@
 import { useParams, Link } from "react-router";
-import { useEffect } from "react";
 import Article from "./Article";
 import Pagination from "./Pagination";
 import { useArticles } from "../../ultils/useArticles";
 
-function Topic({ setSearchParams }) {
+function Topic({ searchParams }) {
   const params = useParams();
 
-  useEffect(() => {
-    setSearchParams({ topic: params.topic });
-  }, [params.topic, setSearchParams]);
-
-  const { articles, isLoading, error } = useArticles({topic: params.topic});
+  const { articles, isLoading, error } = useArticles(
+    Object.fromEntries(searchParams.entries()),
+    { topic: params.topic }
+  );
 
   if (error) return <p>Something went wrong.</p>;
   if (isLoading) return <p>Loading...</p>;
