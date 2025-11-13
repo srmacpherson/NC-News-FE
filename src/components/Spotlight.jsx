@@ -10,7 +10,9 @@ function Spotlight() {
   const [thumbStyleDown, setThumbStyleDown] = useState("thumbs");
   const [isDisabledUp, setIsDisabledUp] = useState(false);
   const [isDisabledDown, setIsDisabledDown] = useState(false);
-  const [ reactError, setReactError ] = useState(null);
+  const [reactError, setReactError] = useState(null);
+  const [spotlightError, setSpotlightError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const isoString = spotlight.created_at;
   const date = new Date(isoString);
@@ -26,7 +28,11 @@ function Spotlight() {
         setVotesCount(res.data.article.votes);
       })
       .catch((err) => {
+        setSpotlightError(err);
         console.error(err);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, []);
 
@@ -82,10 +88,13 @@ function Spotlight() {
       })
       .catch((err) => {
         console.error(err);
-        setReactError(true)
-        setVotesCount("-")
+        setReactError(true);
+        setVotesCount("-");
       });
   }
+
+  if (isLoading) return <p>Loading...</p>
+  if (spotlightError) return <p>{spotlightError.message}</p>;
 
   return (
     <article>
