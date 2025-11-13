@@ -75,6 +75,7 @@ function Comments({ spotlight }) {
               onChange={(e) => setTextVal(e.target.value)}
               name="comment"
               rows="4"
+              placeholder="Start typing..."
               required
             />
           </label>

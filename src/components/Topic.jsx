@@ -11,7 +11,7 @@ function Topic({ searchParams }) {
     { topic: params.topic }
   );
 
-  if (error) return <p>Something went wrong.</p>;
+  if (error) return <p>Topic Not Found.</p>;
   if (isLoading) return <p>Loading...</p>;
 
   return (

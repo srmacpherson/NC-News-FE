@@ -50,7 +50,7 @@ function App() {
             />
           }
         />
-        <Route path="*" element={<My404Component />} />
+        <Route path="*" element={<My404Component searchParams={searchParams}/>} />
       </Routes>
     </>
   );

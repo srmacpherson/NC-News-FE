@@ -94,7 +94,12 @@ function Spotlight() {
   }
 
   if (isLoading) return <p>Loading...</p>
-  if (spotlightError) return <p>{spotlightError.message}</p>;
+  if (spotlightError && spotlightError.status === 404) {
+    return <p>404 Article Not Found.</p> 
+  } 
+  if (spotlightError && spotlightError !== 404) {
+    return <p>{spotlightError.status}</p>
+  }
 
   return (
     <article>

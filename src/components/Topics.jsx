@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
-function Topics({setSearchParams}) {
+function Topics() {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
