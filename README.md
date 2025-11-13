@@ -1,6 +1,9 @@
 # NC-News
 
-https://welcome-to-nc-news.netlify.app/ <br>
+Hosted App: <br>
+https://welcome-to-nc-news.netlify.app/ <br><br>
+Link to backend repo: <br>
+https://github.com/srmacpherson/NC-News-BE
 
 ## Getting Started
 
@@ -20,11 +23,15 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    git clone https://github.com/srmacpherson/NC-News-FE.git
    ```
-2. Install NPM packages
+2. Change directory
+   ```sh
+   cd nc-news-fe
+   ```
+3. Install NPM packages
    ```sh
    npm install
    ```
-3. Change git remote url to avoid accidental pushes to base project
+4. Change git remote url to avoid accidental pushes to base project
    ```sh
    git remote set-url origin github_username/repo_name
    git remote -v # confirm the changes
@@ -37,7 +44,11 @@ To get a local copy up and running follow these simple example steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+Northcoders News - a social news aggregation, web content rating and discussion website. Northcoders News has articles which are divided into topics, and each article has user-curated ratings from upvotes and downvotes using the API. Users can also add comments about an article.
 
+You can navigate using the sidebar - View "ALL" articles, "TRENDING" articles or explore "TOPICS".
+You can also filter your results based on a number of queries.
+Also, you can comment and react to articles - All which will be updating the server through fast API requests.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -72,6 +83,6 @@ Project Link: [github.com/srmacpherson/NC-News-FE](https://github.com/srmacphers
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [Northcoders](https://www.northcoders.com/)
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
