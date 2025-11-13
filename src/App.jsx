@@ -40,7 +40,7 @@ function App() {
         />
         <Route path="/articles/:article_id" element={<Spotlight />} />
         <Route path="/topics" element={<Topics />} />
-        <Route path="/topics/:topic" element={<Topic articles={articles} />} />
+        <Route path="/topics/:topic" element={<Topic articles={articles} setSearchParams={setSearchParams}/>} />
         <Route path="*" element={<My404Component />}/>
       </Routes>
     </>
