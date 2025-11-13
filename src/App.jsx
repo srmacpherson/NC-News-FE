@@ -13,8 +13,6 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [orderBy, setOrderBy] = useState("desc");
-  const [sortBy, setSortBy] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
@@ -40,18 +38,14 @@ function App() {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [orderBy, sortBy, searchParams]);
+  }, [searchParams]);
 
   if (error) return <p>Something went wrong.</p>;
   if (isLoading) return <p>Loading...</p>;
   return (
     <>
       <Header />
-      <SideBar
-        setSortBy={setSortBy}
-        setOrderBy={setOrderBy}
-        setSearchParams={setSearchParams}
-      />
+      <SideBar setSearchParams={setSearchParams} />
       <Routes>
         <Route path="/" element={<Content articles={articles} />} />
         <Route path="/articles" element={<Content articles={articles} />} />

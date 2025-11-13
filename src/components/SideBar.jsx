@@ -1,12 +1,12 @@
 import Navigation from "./Navigation";
 import Filters from "./Filters";
 
-function SideBar({setOrderBy, setSortBy, setSearchParams}) {
+function SideBar({setSearchParams}) {
     return (
         <>
             <h2>SideBar</h2>
             <Navigation />
-            <Filters setSortBy={setSortBy} setOrderBy={setOrderBy} setSearchParams={setSearchParams}/>
+            <Filters setSearchParams={setSearchParams}/>
         </>
     )
 }
