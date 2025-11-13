@@ -20,12 +20,12 @@ function Filters({ setSearchParams }) {
     });
   }
 
-  function handleChangeOrder(e) {
-    setSearchParams((prev) => {
-      const params = Object.fromEntries(prev.entries());
-      return { ...params, order: e.target.value };
-    });
-  }
+  // function handleChangeOrder(e) {
+  //   setSearchParams((prev) => {
+  //     const params = Object.fromEntries(prev.entries());
+  //     return { ...params, order: e.target.value };
+  //   });
+  // }
 
   return (
     <>
@@ -41,7 +41,7 @@ function Filters({ setSearchParams }) {
           <option value="Most Comments">Most Comments</option>
         </select>
 
-        <p>Order By:</p>
+        {/* <p>Order By:</p>
         <input
           type="radio"
           id="order1"
@@ -58,7 +58,7 @@ function Filters({ setSearchParams }) {
           value="asc"
           onChange={handleChangeOrder}
         />
-        <label htmlFor="order2">ascending</label>
+        <label htmlFor="order2">ascending</label> */}
       </section>
     </>
   );

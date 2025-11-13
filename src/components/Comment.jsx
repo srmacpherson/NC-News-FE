@@ -34,7 +34,7 @@ function Comment({ comment, date, voteStyle }) {
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(false), 3000);
     return () => clearTimeout(timer);
-  }, [isDeleted])
+  }, [isDeleted]);
 
   function handleClickVote(e) {
     console.log(e.target.innerHTML);
@@ -83,7 +83,14 @@ function Comment({ comment, date, voteStyle }) {
   }
 
   if (isDeleting) return <div>Deleting comment...</div>;
-  if (isDeleted) return isVisible && <div className="fade-out-delete"><p>Comment deleted.</p></div>; 
+  if (isDeleted)
+    return (
+      isVisible && (
+        <div className="fade-out-delete">
+          <p>Comment deleted.</p>
+        </div>
+      )
+    );
 
   return (
     <li key={comment.comment_id} className="spotlight-comment-card">
@@ -115,10 +122,10 @@ function Comment({ comment, date, voteStyle }) {
         </button>
         <p className={voteStyle}>{votesCount}</p>
       </div>
-      <div className="reply-box">
+      {/* <div className="reply-box">
         <p className="reply-box-p-tag">reply:</p>
         <input type="text" className="reply-box-input" />
-      </div>
+      </div> */}
     </li>
   );
 }

@@ -161,6 +161,10 @@ textarea {
     margin: 10px 0;
 }
 
+li.spotlight-comment-card {
+    padding: 0 0 10px 10px;
+}
+
 .spotlight-comments-card {
     background-color: antiquewhite;
     padding: 15px 25px;
