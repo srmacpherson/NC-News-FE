@@ -3,36 +3,39 @@
 }
 
 body {
-    background-color: #f8f9fa;
+    background-color: #caf0f8;
     padding: 0 20px;
     max-width: 1750px;
     margin: 0 auto;
 }
 
 h1 {
-    background-color: #dee2e6;
+    background-color: #03045e;
     border-radius: 5px;
-    max-width: fit-content;
-    padding: 10px;
-    border: #212529 3px ridge;
-    font-size: 44px;
+    max-width: 195px;
+    padding: 20px;
+    font-size: 42px;
+    color: white;
+    margin: 45px 0 0 0;
 }
 
 .content-section {
-    background-color: #e9ecef;
+    background-image: linear-gradient(rgba(144, 224, 239, 1), rgba(255,0,0,0));
+
     display: flex;
     flex-direction: column;  
     align-items: center;  
-    border-radius: 100px;
+    border-radius: 5px;
     padding: 10px 0 0 0;
 }
 
 h3 {
-    background-color: #dee2e6;
+    background-color: #0077b6;
     border-radius: 5px;
     width: fit-content;
     padding: 10px;
-    border: #212529 3px ridge;
+    border: #212529 1px ridge;
+    color: white;
 }
 
 ul {
@@ -72,12 +75,13 @@ ul {
 
 .article-card-comments {
     grid-area: comments;
-    justify-self: left;
+    justify-self: center;
     margin: 0;
     border: 2px outset  #adb5bd;
     border-radius: 0 0 5px 0;
-    padding: 10px 0;
-    width: 98.8%;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .article-card-comments:hover {
@@ -92,8 +96,9 @@ ul {
     margin: 0;
     border: 2px outset #adb5bd;
     border-radius: 0 0 0 5px;
-    padding: 10px 0;
-    width: 98.8%;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .article-card-votes:hover {
@@ -146,8 +151,8 @@ ul {
     "img img"
     "votes comments"
     "author date";
-    background-color: #dee2e6;
-    border-radius: 10px;
+    background-color: rgba(0, 180, 216, .6);
+    border-radius: 5px;
 }
 
 .spotlight-post-comment-card {
@@ -286,7 +291,8 @@ li.spotlight-comment-card {
 #sidebar {
     grid-area: sidebar;
     padding: 20px;
-    background-image: linear-gradient(rgb(255, 255, 255), rgba(255,0,0,0));
+    background-image: linear-gradient(rgba(0, 180, 216, 1), rgba(255,0,0,0));
+    border-radius: 5px;
 }
 
 #app {
@@ -447,4 +453,9 @@ li.spotlight-comment-card {
 a {
     text-decoration: none; 
     color: inherit;   
+}
+
+.nav-link:hover {
+    background-color: #90e0ef;
+    color: black;
 }
