@@ -432,9 +432,14 @@ li.spotlight-comment-card {
   text-align: center;   /* ensures text is centered */
   padding: 50px;
   margin: 20px;
-  border: #adb5bd solid 2px;
+  border: #00b4d8 solid 2px;
   border-radius: 80px;
-  background-color: #d4e3f1;
+  background-color: #90e0ef;
+}
+
+.topic-item:hover {
+    background-color: #00b4d8;
+    color: #caf0f8;
 }
 
 .topic-item a {
@@ -457,5 +462,5 @@ a {
 
 .nav-link:hover {
     background-color: #90e0ef;
-    color: black;
+    color: #03045e;
 }
