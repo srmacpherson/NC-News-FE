@@ -3,34 +3,34 @@
 }
 
 body {
-    background-color: rgb(48, 68, 74);
+    background-color: #f8f9fa;
     padding: 0 20px;
     max-width: 1250px;
     margin: 0 auto;
 }
 
 h1 {
-    background-color: aqua;
+    background-color: #dee2e6;
     border-radius: 5px;
     max-width: fit-content;
     padding: 10px;
-    border: slategray 3px solid;
+    border: #212529 3px ridge;
 }
 
 .content-section {
     max-width: 800px; 
-    background-color: rgb(180, 184, 189);
+    background-color: #e9ecef;
     display: flex;
     flex-direction: column;  
     align-items: center;  
 }
 
 h3 {
-    background-color: aqua;
+    background-color: #dee2e6;
     border-radius: 5px;
     width: fit-content;
     padding: 10px;
-    border: slategray 3px solid;
+    border: #212529 3px ridge;
 }
 
 ul {
@@ -72,7 +72,7 @@ ul {
     grid-area: comments;
     justify-self: left;
     margin: 0;
-    border: 2px outset rgb(48, 68, 74);
+    border: 2px outset  #adb5bd;
     border-radius: 0 0 5px 0;
     padding: 10px 0;
     width: 98.8%;
@@ -88,7 +88,7 @@ ul {
     grid-area: votes;
     justify-self: right;
     margin: 0;
-    border: 2px outset rgb(48, 68, 74);
+    border: 2px outset #adb5bd;
     border-radius: 0 0 0 5px;
     padding: 10px 0;
     width: 98.8%;
@@ -110,7 +110,7 @@ ul {
 #article-card-topic-id {
     padding: 10px;
     border-radius: 5px;
-    background-color: aqua;
+    background-color: #dee2e6;
 }
 
 #article-card-topic-id:hover {
@@ -145,7 +145,7 @@ ul {
     "img img"
     "votes comments"
     "author date";
-    background-color: slategray;
+    background-color: #dee2e6;
     border-radius: 10px;
 }
 
