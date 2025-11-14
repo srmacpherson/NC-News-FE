@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import Comments from "./Comments";
+import { Link } from "react-router";
 
 function Spotlight() {
   const [spotlight, setSpotlight] = useState({});
@@ -109,9 +110,9 @@ function Spotlight() {
           {spotlight.author} - {date.toLocaleString().slice(0, -3)}
         </em>
       </p>
-      <p id="article-topic" className="article-card-topic">
+      <Link to={`/topics/${spotlight.topic}`}><p id="article-topic" className="article-card-topic">
         <span id="article-card-topic-id">{spotlight.topic}</span>
-      </p>
+      </p></Link>
       <img id="article-img" src={spotlight.article_img_url} />
       <p id="article-votes-comments">
         votes: {votesCount} || {spotlight.comment_count} comments
