@@ -17,23 +17,23 @@ function Topics() {
   }, []);
 
   return (
-    <>
-      <h2>TOPICS:</h2>
-      <section>
-        <ul>
+    <div id="topics-container">
+      <h3 id="topics-title">TOPICS:</h3>
+      <section id="topics-topics">
+        <ul id="topic-container">
           {topics.map((topic) => {
             return (
-              <li key={topic.slug}>
-                <Link to={`/topics/${topic.slug}`}>
-                  <h3>{topic.slug.toUpperCase()}</h3>
+              <Link to={`/topics/${topic.slug}`}>
+                <li className="topic-item" key={topic.slug}>
+                  <h4>{topic.slug.toUpperCase()}</h4>
                   <p>{topic.description}</p>
-                </Link>
-              </li>
+                </li>
+              </Link>
             );
           })}
         </ul>
       </section>
-    </>
+    </div>
   );
 }
 

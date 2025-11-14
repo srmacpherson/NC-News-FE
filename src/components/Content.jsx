@@ -13,8 +13,8 @@ function Content({ searchParams }) {
 
   return (
     <section id="content" className="content-section">
-      <h3>Articles</h3>
-      <ul>
+      <h3 id="all-articles-title">Articles</h3>
+      <ul id="all-articles-content">
         {articles.map((article) => {
           return (
             <li className="article-li" key={article.article_id}>
@@ -25,7 +25,7 @@ function Content({ searchParams }) {
           );
         })}
       </ul>
-      <Pagination />
+      {/* <Pagination /> */}
     </section>
   );
 }

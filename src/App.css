@@ -15,14 +15,16 @@ h1 {
     max-width: fit-content;
     padding: 10px;
     border: #212529 3px ridge;
+    font-size: 44px;
 }
 
 .content-section {
-    max-width: 800px; 
     background-color: #e9ecef;
     display: flex;
     flex-direction: column;  
     align-items: center;  
+    border-radius: 100px;
+    padding: 10px 0 0 0;
 }
 
 h3 {
@@ -45,7 +47,7 @@ ul {
 .article-li {
     margin: 20px;
     align-items: center;
-    /* max-width: 700px; */
+    max-width: 784px;
 }
 
 .article-card-img {
@@ -135,7 +137,6 @@ ul {
 
 .article-card {
     padding: 40px 40px 0 40px;
-    /* max-width: 700px;; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 3fr 1fr 10px;
@@ -372,4 +373,78 @@ li.spotlight-comment-card {
     "like dislike . . ."
     "body body body body body"
     "comments comments comments comments comments";
+}
+
+/* ALL ARTICLES GRID */
+
+#all-articles-title {
+    grid-area: title;
+    justify-self: center;
+    font-size: 36px;
+}
+
+#all-articles-content {
+    grid-area: content;
+}
+
+#content {
+ display: grid;
+ grid-template-columns: 1fr 200px 1fr;
+ grid-template-rows: 100px 1fr;   
+ grid-template-areas:
+ ". title ."
+ "content content content";
+}
+
+/* TOPICS GRID */
+
+#topics-title {
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+}
+
+#topics-topics {
+    grid-area: topics;
+    justify-self: center;
+    align-self: center;
+}
+
+#topics-container {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: 
+    ". title ."
+    "topics topics topics";
+}
+
+.topic-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* centers horizontally inside li */
+  text-align: center;   /* ensures text is centered */
+  padding: 50px;
+  margin: 20px;
+  border: #adb5bd solid 2px;
+  border-radius: 80px;
+  background-color: #d4e3f1;
+}
+
+.topic-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-decoration: none; 
+  color: inherit;   
+}
+
+#topic-container {
+ display: flex;
+ justify-content: center;
+}
+
+a {
+    text-decoration: none; 
+    color: inherit;   
 }
