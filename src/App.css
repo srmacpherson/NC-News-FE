@@ -108,23 +108,31 @@ ul {
 }
 
 .article-card-topic {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    margin-left: 10px;
-    margin-top: 20px;
+    position: absolute;   
+    top: 5px;       
+    right: 20px;    
+    padding: 10px;    
+    background-color: rgba(237, 244, 245, 0.6);
+    border-radius: 5px;
+    z-index: 2;       
 }
 
 #article-card-topic-id {
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #dee2e6;
+    display: inline-block;    
+    padding: 10px;  
+    border: #0077b6 1px solid;       
+    border-radius: 5px;       
+    background-color: #00b4d8;
+    text-decoration: none;
+    color: inherit;
 }
 
 #article-card-topic-id:hover {
+    display: inline-block;  
     padding: 10px;
-    border-radius: 5px;
     background-color: white;
-    text-decoration: underline;
+    border-radius: 5px;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -141,6 +149,7 @@ ul {
 }
 
 .article-card {
+    position: relative;
     padding: 40px 40px 0 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
