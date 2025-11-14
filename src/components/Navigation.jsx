@@ -6,9 +6,9 @@ function Navigation() {
       <Link to="/articles">
         <h3>ALL</h3>
       </Link>
-      <Link to="/articles">
+      {/* <Link to="/articles">
         <h3>TRENDING (not done yet)</h3>
-      </Link>
+      </Link> */}
       <Link to="/topics">
         <h3>TOPICS</h3>
       </Link>

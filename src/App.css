@@ -279,16 +279,19 @@ li.spotlight-comment-card {
 
 #header {
     grid-area: header;
+    align-self: center;
 }
 
 #sidebar {
     grid-area: sidebar;
+    padding: 20px;
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(255,0,0,0));
 }
 
 #app {
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 200px 1fr;
+    grid-template-rows: 100px 1fr;
     grid-template-areas: 
     "header header header"
     "sidebar content .";
@@ -319,6 +322,7 @@ li.spotlight-comment-card {
 /* ARTICLE-ID GRID */
 #article-title {
     grid-area: title;
+    font-size: 44px;
 }
 
 #article-author-date {
@@ -358,13 +362,13 @@ li.spotlight-comment-card {
 #article-container {
     display: grid;
     grid-template-columns: 100px 100px 8fr 100px 100px;
-    grid-template-rows: .5fr 50px .5fr 4fr .5fr .5fr 1fr 200px;
+    grid-template-rows: .5fr 50px .5fr 3fr .25fr .25fr 1fr 200px;
     grid-template-areas: 
     "title title title title title"
     "author-date author-date author-date author-date author-date"
     "topic . . . ."
     ". img img img ."
-    "votes-comments . . . ."
+    "votes-comments votes-comments votes-comments . ."
     "like dislike . . ."
     "body body body body body"
     "comments comments comments comments comments";
