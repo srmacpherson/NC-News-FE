@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router";
 import Article from "./Article";
 import Pagination from "./Pagination";
-import { useArticles } from "../../ultils/useArticles";
+import { useArticles } from "../ultils/useArticles";
 
 function Topic({ searchParams }) {
   const params = useParams();

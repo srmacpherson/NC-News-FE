@@ -1,7 +1,7 @@
 import Article from "./Article";
 import Pagination from "./Pagination";
 import { Link } from "react-router";
-import { useArticles } from "../../ultils/useArticles";
+import { useArticles } from "../ultils/useArticles";
 
 function Content({ searchParams }) {
   const { articles, isLoading, error } = useArticles(
