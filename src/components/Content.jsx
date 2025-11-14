@@ -12,7 +12,7 @@ function Content({ searchParams }) {
   if (isLoading) return <p>Loading...</p>;
 
   return (
-    <section className="content-section">
+    <section id="content" className="content-section">
       <h3>Articles</h3>
       <ul>
         {articles.map((article) => {

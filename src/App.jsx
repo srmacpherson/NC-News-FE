@@ -14,7 +14,7 @@ function App() {
   const [articles, setArticles] = useState([]);
 
   return (
-    <>
+    <div id="app">
       <Header />
       <SideBar setSearchParams={setSearchParams} />
       <Routes>
@@ -52,7 +52,7 @@ function App() {
         />
         <Route path="*" element={<My404Component searchParams={searchParams}/>} />
       </Routes>
-    </>
+    </div>
   );
 }
 

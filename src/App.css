@@ -151,14 +151,14 @@ ul {
 
 .spotlight-post-comment-card {
     width: 100%;
-   background-color: antiquewhite;
-    padding: 15px 25px;
+   background-color: #e9ecef;
+    padding: 10px 5px;
     border-radius: 10px; 
 }
 
 textarea {
-    width: 100%;
     margin: 10px 0;
+    width: 99%;
 }
 
 li.spotlight-comment-card {
@@ -166,16 +166,16 @@ li.spotlight-comment-card {
 }
 
 .spotlight-comments-card {
-    background-color: antiquewhite;
     padding: 15px 25px;
     border-radius: 10px;
     margin: 40px 0;
+    width: 100%;
 }
 
 .spotlight-comment-card {
-    background-color: white;
+    background-color:#e9ecef;
     border-radius: 10px;
-    padding: 0 10px;
+    padding: 15px 25px;
     margin: 5px;
     width: 100%;
 }
@@ -270,4 +270,48 @@ li.spotlight-comment-card {
 @-ms-keyframes fadeOut {
     0% { opacity: 1; }
     100% { opacity: 0; }
+}
+
+/* FULL PAGE GRID */
+#content {
+    grid-area: content;
+}
+
+#header {
+    grid-area: header;
+}
+
+#sidebar {
+    grid-area: sidebar;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 200px 1fr;
+    grid-template-areas: 
+    "header header"
+    "sidebar content";
+    gap: 3em;
+}
+
+/* HEADER GRID */
+#logo {
+    grid-area: logo;
+}
+
+#searchbar {
+    grid-area: searchbar;
+}
+
+#user {
+    grid-area: user;
+}
+
+#header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "logo searchbar . user";
 }

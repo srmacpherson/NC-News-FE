@@ -4,11 +4,11 @@ import { Link } from "react-router";
 
 function Header() {
     return (
-        <>
-            <Link to="/"><h1>NC-News</h1></Link>
-            <User />
+        <div id="header">
+            <Link to="/"><h1 id="logo">NC-News</h1></Link>
             <SearchBar />
-        </>
+            <User />
+        </div>
     )
 }
 
