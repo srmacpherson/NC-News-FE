@@ -102,21 +102,22 @@ function Spotlight() {
   }
 
   return (
-    <article>
-      <h2>{spotlight.title}</h2>
-      <p>
+    <article id="article-container">
+      <h2 id="article-title">{spotlight.title}</h2>
+      <p id="article-author-date">
         <em>
           {spotlight.author} - {date.toLocaleString().slice(0, -3)}
         </em>
       </p>
-      <p className="article-card-topic">
+      <p id="article-topic" className="article-card-topic">
         <span id="article-card-topic-id">{spotlight.topic}</span>
       </p>
-      <img src={spotlight.article_img_url} />
-      <p>
+      <img id="article-img" src={spotlight.article_img_url} />
+      <p id="article-votes-comments">
         votes: {votesCount} || {spotlight.comment_count} comments
       </p>
       <button
+        id="article-like"
         className={thumbStyleUp}
         disabled={isDisabledUp}
         onClick={handleClickReact}
@@ -124,6 +125,7 @@ function Spotlight() {
         {"Like 👍"}
       </button>
       <button
+        id="article-dislike"
         className={thumbStyleDown}
         disabled={isDisabledDown}
         onClick={handleClickReact}
@@ -131,7 +133,7 @@ function Spotlight() {
         {"Dislike 👎"}
       </button>
       {reactError ? <em> Could not react...</em> : ""}
-      <p>{spotlight.body}</p>
+      <p id="article-body">{spotlight.body}</p>
       <Comments spotlight={spotlight} />
     </article>
   );

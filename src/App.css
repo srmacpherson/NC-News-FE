@@ -5,7 +5,7 @@
 body {
     background-color: #f8f9fa;
     padding: 0 20px;
-    max-width: 1250px;
+    max-width: 1750px;
     margin: 0 auto;
 }
 
@@ -45,7 +45,7 @@ ul {
 .article-li {
     margin: 20px;
     align-items: center;
-    max-width: 700px;
+    /* max-width: 700px; */
 }
 
 .article-card-img {
@@ -135,7 +135,7 @@ ul {
 
 .article-card {
     padding: 40px 40px 0 40px;
-    max-width: 700px;;
+    /* max-width: 700px;; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 3fr 1fr 10px;
@@ -287,11 +287,11 @@ li.spotlight-comment-card {
 
 #app {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 5fr 1fr;
     grid-template-rows: 200px 1fr;
     grid-template-areas: 
-    "header header"
-    "sidebar content";
+    "header header header"
+    "sidebar content .";
     gap: 3em;
 }
 
@@ -314,4 +314,58 @@ li.spotlight-comment-card {
     grid-template-rows: 1fr;
     grid-template-areas: 
     "logo searchbar . user";
+}
+
+/* ARTICLE-ID GRID */
+#article-title {
+    grid-area: title;
+}
+
+#article-author-date {
+    grid-area: author-date;
+}
+
+#article-img {
+    grid-area: img;
+    justify-self: center;
+    align-self: center;
+}
+
+#article-topic {
+    grid-area: topic;
+}
+
+#article-votes-comments {
+    grid-area: votes-comments;
+}
+
+#article-like {
+    grid-area: like;
+}
+
+#article-dislike {
+    grid-area: dislike;
+}
+
+#article-body {
+    grid-area: body;
+}
+
+.spotlight-comments-card {
+    grid-area: comments;
+}
+
+#article-container {
+    display: grid;
+    grid-template-columns: 100px 100px 8fr 100px 100px;
+    grid-template-rows: .5fr 50px .5fr 4fr .5fr .5fr 1fr 200px;
+    grid-template-areas: 
+    "title title title title title"
+    "author-date author-date author-date author-date author-date"
+    "topic . . . ."
+    ". img img img ."
+    "votes-comments . . . ."
+    "like dislike . . ."
+    "body body body body body"
+    "comments comments comments comments comments";
 }
