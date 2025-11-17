@@ -29,9 +29,8 @@ function Filters({ setSearchParams }) {
 
   return (
     <>
-      <h2>Filters</h2>
+      <section className="filter-section">
       <label htmlFor="sortBy">Sort By:</label>
-      <section>
         <select name="sortBy" id="sortBy" onChange={handleChange}>
           <option value="">--Sort By--</option>
           <option value="Date (newest-oldest)">Date (newest-oldest)</option>

@@ -92,7 +92,7 @@ ul {
 
 .article-card-votes {
     grid-area: votes;
-    justify-self: right;
+    justify-self: center;
     margin: 0;
     border: 2px outset #adb5bd;
     border-radius: 0 0 0 5px;
@@ -163,6 +163,30 @@ ul {
     background-color: rgba(0, 180, 216, .6);
     border-radius: 5px;
 }
+
+@media (max-width: 888px) {
+    .article-card {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "img"
+        "img"
+        "img"
+        "votes"
+        "comments"
+        "author"
+        "date";
+    }
+    .article-card-title {
+        font-size: 15px;
+    }
+    .article-card-votes {
+        text-align: center;
+    }
+    .article-card-comments {
+        text-align: center;
+    }
+}
+
 
 .spotlight-post-comment-card {
     width: 100%;
@@ -312,6 +336,28 @@ li.spotlight-comment-card {
     "header header header"
     "sidebar content .";
     gap: 3em;
+}
+
+@media (max-width: 652px) {
+    #app {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 100px 1fr;
+        grid-template-areas: 
+        "header"
+        "sidebar"
+        "content";
+        gap: 3em;
+    }
+
+    .nav-bar {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .filter-section {
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
 
 /* HEADER GRID */
